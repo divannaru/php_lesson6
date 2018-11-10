@@ -12,7 +12,7 @@
 
 <body>
     <div>
-        <form action="calculate.php" method="POST" enctype="multipart/form-data">
+        <form action="" method="POST" enctype="multipart/form-data">
             <p>Введите первое число</p>
             <input type="text" name="number1"><br>
             <p>Введите второе число</p>
@@ -25,8 +25,13 @@
                 <option value="Умножение">Умножение</option>
                 <option value="Деление">Деление</option>
             </select></p>
-            <input type="submit" value="Результат">
+            <input type="submit" name="submit" value="Вычислить">
         </form>
+        <?
+            if (isset($_POST["submit"])){
+                include "calculate.php";
+            }
+        ?>
 <p>Результат операции: <?=$res?></p>
 
     </div>
